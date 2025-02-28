@@ -1,0 +1,23 @@
+# Core libraries
+pandas
+numpy
+
+# Data fetching
+yfinance
+
+# Visualization
+matplotlib
+seaborn
+
+# Time Series Forecasting
+statsmodels
+pmdarima
+tensorflow  # For LSTM (optional)
+scikit-learn
+
+# Portfolio Optimization
+cvxpy  # For portfolio optimization
+PyPortfolioOpt
+
+# Jupyter Notebook (if working in Jupyter)
+notebook
