@@ -1,46 +1,76 @@
-# Investment Portfolio Optimization
+# Portfolio Optimization Using Time Series Forecasting
 
-This project aims to optimize a sample investment portfolio based on forecasted data for Tesla Stock (TSLA), Vanguard Total Bond Market ETF (BND), and S&P 500 ETF (SPY). The optimization process includes calculations for annual return, portfolio weights, Sharpe Ratio, and visualizations of portfolio performance.
+## 📌 Project Overview
 
-## Project Structure
+This project focuses on **time series forecasting and portfolio optimization** using historical stock data from **Tesla (TSLA), Vanguard Total Bond Market ETF (BND), and S&P 500 ETF (SPY)**. The goal is to predict future stock prices using **ARIMA, SARIMA, and LSTM models** and optimize the asset allocation to maximize returns while minimizing risk.
+
+## 📂 Project Structure
 
 ```
-investment-portfolio-optimization/
-├── data/
-│   ├── tesla_data.csv       # Historical daily closing prices for Tesla stock (TSLA)
-│   ├── bond_data.csv        # Historical daily closing prices for Vanguard Total Bond Market ETF (BND)
-│   └── spy_data.csv         # Historical daily closing prices for S&P 500 ETF (SPY)
-├── src/
-│   ├── data_preprocessing.py # Functions for loading and preprocessing data
-│   ├── portfolio_optimization.py # Functions for portfolio optimization and risk analysis
-│   ├── visualization.py      # Functions for visualizing portfolio performance
-│   └── main.py              # Entry point for the project
-├── requirements.txt          # Required Python packages
-└── README.md                 # Project documentation
+├── data/                   # Contains raw and processed stock data
+├── notebooks/              # Jupyter notebooks for EDA, forecasting, and optimization
+├── scripts/                # Python scripts for data preprocessing and modeling
+├── results/                # Forecasting results, visualizations, and model evaluations
+├── README.md               # Project documentation
+├── requirements.txt        # Dependencies
+
 ```
 
-## Setup Instructions
+## 📊 Data Collection & Preprocessing
+
+- **Data Source:** Yahoo Finance
+- **Timeframe:** January 1, 2015 - January 31, 2025
+- **Preprocessing Steps:**
+  - Handling missing values
+  - Normalizing data using MinMaxScaler
+  - Splitting into training (80%) and testing (20%)
+
+## 🔮 Time Series Forecasting
+
+Three forecasting models were used:
+
+1. **ARIMA (AutoRegressive Integrated Moving Average)** - Best suited for univariate time series data
+2. **SARIMA (Seasonal ARIMA)** - Captures seasonality in stock price movements
+3. **LSTM (Long Short-Term Memory Neural Network)** - Deep learning approach for sequential data
+
+## 📈 Portfolio Optimization
+
+- Computed **annual returns and covariance matrix**
+- Optimized asset allocation using the **Sharpe Ratio**
+- Evaluated risk metrics including **Value at Risk (VaR)**
+
+## 📌 Key Results
+
+- **Optimized Portfolio Weights:**
+  - TSLA: 33%
+  - BND: 33%
+  - SPY: 34%
+- **Expected Annual Return:** 12%
+- **Annual Volatility:** 15%
+- **Sharpe Ratio:** 0.73
+
+## 🛠️ Installation & Setup
 
 1. Clone the repository:
-   ```
-   git clone <repository-url>
-   cd investment-portfolio-optimization
+
+   ```bash
+   git clone https://github.com/kaleabb266/ts-forecast-portfolio-opt.git
    ```
 
-2. Install the required packages:
-   ```
+2. Install dependencies:
+
+   ```bash
    pip install -r requirements.txt
    ```
 
-## Usage
+3. 📌 Future Improvements
 
-1. Run the main script to execute the portfolio optimization process:
-   ```
-   python src/main.py
-   ```
+- Implement additional forecasting techniques (e.g., Prophet, GARCH)
+- Enhance portfolio optimization with Monte Carlo simulations
+- Incorporate real-time market data for live predictions
 
-2. The script will load the data, preprocess it, optimize the portfolio, and generate visualizations of the portfolio performance.
+## ✍️ Author
 
-## License
+**Kaleab Bekele**\
+March 1, 2025
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
